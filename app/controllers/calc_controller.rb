@@ -4,7 +4,7 @@ class CalcController < ApplicationController
     Basket.init
     JSON.parse(request.body.read)["items"].each do |item|
       Basket.add(item["name"], item["count"])
-      # sleep 0.0001
+      # sleep 0.001
     end
     render json: Basket.result
   end
